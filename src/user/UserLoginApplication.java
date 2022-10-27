@@ -51,11 +51,13 @@ private static String userPassword = null;
 			
 			else { //if it doesnt return null, user input was not in the array and will prompt this:
 				
-				System.out.println("Invalid login, try again");
 				numberOfLogins++;
 				
 				//check for number of invalid login tries
-				if(numberOfLogins == 5) {
+				if(numberOfLogins<5) {
+					System.out.println("Invalid login, try again");
+				}
+				else if(numberOfLogins >= 5) {
 					
 					System.out.println("Too many failed login attempts, you are now locked out.");
 				}
